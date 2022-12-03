@@ -55,8 +55,8 @@ app.post("/api/user/login", (req, res) => {
       const token = jwt.sign(payload, process.env.secretOrKey);
       res.json({ message: "login successful", token });
     })
-    .catch((msg) => {
-      res.status(422).json({ message: msg });
+    .catch((err) => {
+      res.status(422).json({ message: err.message });
     });
 });
 
