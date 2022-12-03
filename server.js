@@ -52,7 +52,7 @@ app.post("/api/user/login", (req, res) => {
         _id: user._id,
         userName: user.userName,
       };
-      const token = jwt.sign(payload, process.env.secretOrKey);
+      const token = jwt.sign(payload, process.env.JWT_SECRET);
       res.json({ message: "login successful", token });
     })
     .catch((err) => {
