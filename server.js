@@ -31,7 +31,7 @@ const HTTP_PORT = process.env.PORT || 8080;
 app.use(express.json());
 app.use(cors());
 passport.use(strategy);
-app.use(passport.initialize);
+app.use(passport.initialize());
 
 app.post("/api/user/register", (req, res) => {
   userService
